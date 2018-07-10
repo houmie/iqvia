@@ -40,5 +40,4 @@ def test_contact_doesnt_exists(monkeypatch):
     """
     monkeypatch.setattr('iqvia.contacts.services.Contact',
                         Mock(query=Mock(filter=Mock(return_value=Mock(scalar=Mock(return_value=None))))))
-
     assert does_contact_username_exist('username') is False
