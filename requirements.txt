@@ -1,0 +1,9 @@
+flask
+flask-io
+flask-sqlalchemy
+flask-apidoc
+Flask-Script
+flask-login
+dictalchemy
+sqlalchemy
+pytest
