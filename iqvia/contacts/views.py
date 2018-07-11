@@ -129,14 +129,15 @@ def update_contact(contact_id, contact_data):
     if not contact:
         return io.bad_request('Sorry, the contact {} you try to update does not exist'.format(contact_id))
 
-    if 'username' in contact_data and does_contact_username_exist(contact.username):
+    if 'username' in contact_data and contact.username != contact_data['username'] and \
+            does_contact_username_exist(contact_data['username']):
         return io.bad_request('Sorry, you cannot update the contact '
-                              'with the username {}: it already exists'.format(contact.username))
+                              'with the username {}: it already exists'.format(contact_data['username']))
 
-    if 'email' in contact_data and does_contact_email_exist(contact.email):
+    if 'email' in contact_data and contact.email != contact_data['email'] and \
+            does_contact_email_exist(contact_data['email']):
         return io.bad_request('Sorry, you cannot update the contact '
-                              'with the email {}: it already exists'.format(contact.email))
-
+                              'with the email {}: it already exists'.format(contact_data['email']))
     # TODO: use fromdict
     if 'first_name' in contact_data:
         contact.first_name = contact_data['first_name']

@@ -234,7 +234,7 @@ def test_update_contact_nok_username_already_exists(monkeypatch):
     status_code, response_data = post('contacts/7e8377af-bdc3-4b9e-a491-2d9ddff3253f', test_data)
 
     assert response_data == {'errors': [{'message': 'Sorry, you cannot update the contact '
-                                                    'with the username testusername1234: it already exists'}]}
+                                                    'with the username testusername1234UPDATED: it already exists'}]}
 
     assert status_code == 400
     assert database_mock.call_count == 0
@@ -267,7 +267,8 @@ def test_update_contact_nok_email_already_exists(monkeypatch):
     status_code, response_data = post('contacts/7e8377af-bdc3-4b9e-a491-2d9ddff3253f', test_data)
 
     assert response_data == {'errors': [{'message': 'Sorry, you cannot update the contact '
-                                                    'with the email testemail1@gmail.com: it already exists'}]}
+                                                    'with the email testemail2comUPDATED@gmail.com: '
+                                                    'it already exists'}]}
 
     assert status_code == 400
     assert database_mock.call_count == 0
