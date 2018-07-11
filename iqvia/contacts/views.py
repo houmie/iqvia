@@ -72,7 +72,7 @@ def get_contact_by_username(username):
     @apiName get_contacts
     @apiGroup Contacts
 
-    @apiParam {String{6-32}}             [username]           Username of the contact.
+    @apiParam {String{6-32}}             username             Username of the contact.
 
     @apiSuccess {UUID}                   id                   The ID of the contact.
     @apiSuccess {String{1-50}}           first_name           The first name of the contact.
