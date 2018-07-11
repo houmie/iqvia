@@ -5,7 +5,7 @@ from .services import validate_username
 
 class ContactSchema(Schema):
     """
-    Serialization-Deserialization class for User.
+    serialization-deserialization-validation class for Contacts.
     """
     id = fields.UUID(dump_only=True)
     first_name = fields.String(50, required=True)

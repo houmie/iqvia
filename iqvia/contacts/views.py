@@ -27,7 +27,7 @@ def add_contact(contact):
     @apiSuccess {String{1-50}}           first_name           The first name of the contact.
     @apiSuccess {String{1-50}}           surname              The surname of the contact.
     @apiSuccess {String{6-32}}           username             The username of the contact.
-    @apiSuccess {String{5-128}}          email                The password of the contact.
+    @apiSuccess {String{5-128}}          email                The email of the contact.
     """
     contact.id = str(uuid4())
 
@@ -78,7 +78,7 @@ def get_contact_by_username(username):
     @apiSuccess {String{1-50}}           first_name           The first name of the contact.
     @apiSuccess {String{1-50}}           surname              The surname of the contact.
     @apiSuccess {String{6-32}}           username             The username of the contact.
-    @apiSuccess {String{5-128}}          email                The password of the contact.
+    @apiSuccess {String{5-128}}          email                The email of the contact.
     """
     contact = Contact.query.filter(Contact.username == str(username)).first()
     if not contact:
@@ -123,7 +123,7 @@ def update_contact(contact_id, contact_data):
     @apiSuccess {String{1-50}}           first_name           The first name of the contact.
     @apiSuccess {String{1-50}}           surname              The surname of the contact.
     @apiSuccess {String{6-32}}           username             The username of the contact.
-    @apiSuccess {String{5-128}}          email                The password of the contact.
+    @apiSuccess {String{5-128}}          email                The email of the contact.
     """
     contact = Contact.query.filter(Contact.id == str(contact_id)).first()
     if not contact:
