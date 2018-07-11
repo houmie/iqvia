@@ -1,6 +1,8 @@
 # iqvia
 
 An API to handle contacts.
+We consider all the fields as mandatory (first name, surname, username and email address) which sounds realistic for
+a contact form.
 
 ## Installation
 
