@@ -8,6 +8,13 @@ An API to handle contacts.
 - source env/bin/activate
 - pip install -r requirements.txt
 
+## Generate a new sqlite database
+
+- cd iqvia
+- python dbinit.py
+
+You'll bet a fresh iqvia.db mapped in the config.py
+
 ## Run unit tests:
 
 - python -m pytest tests
